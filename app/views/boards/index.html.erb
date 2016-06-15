@@ -1,0 +1,13 @@
+<h1>Quadros</h1>
+
+<% @boards.each do |board| %>
+  <div class="all-boards">
+    <ul>
+      <li><%= board.name %></li>
+      <%= board.description %>
+
+      <%= link_to "Excluir cartão", board_path(board), method: :delete, data: { confirm: "Você tem certeza que deseja excluir este cartão?" } %>
+
+    </ul>
+  </div>
+<% end %>
