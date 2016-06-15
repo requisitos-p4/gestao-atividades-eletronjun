@@ -1,2 +1,2 @@
-# gestao-atividades-eletronjun
+# Módulo de Gestão e Acompanhamento de Atividades da Eletronjun
 Repositório para o Módulo de Gestão e Acompanhamento de Atividades da Eletronjun - Empresa Júnior de Engenharia Eletrônica da Universidade de Brasília - Faculdade Gama
