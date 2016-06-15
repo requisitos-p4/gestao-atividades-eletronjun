@@ -1,3 +1,6 @@
 <h1> <%= @board.name %> </h1>
 
 <%= @board.description %>
+
+<%= link_to "Editar quadro", edit_board_path %>
+<%= link_to "Excluir quadro", board_path, method: :delete, data: { confirm: "Você tem certeza que deseja excluir este quadro?" } %>
