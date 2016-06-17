@@ -1,5 +1,7 @@
 class Board < ActiveRecord::Base
 
-  validates_presence_of :description, :name
+  # belongs_to :user
+
+  validates_presence_of :description, :name, :admin
 
 end
