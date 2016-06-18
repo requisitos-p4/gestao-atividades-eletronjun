@@ -16,6 +16,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @board.admin = current_user
   end
 
   def index

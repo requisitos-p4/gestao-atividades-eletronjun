@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  belongs_to :board
+
   before_save { self.email = email.downcase }
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
