@@ -14,6 +14,8 @@
 #  5 - trainee
 #  6 - colaborador
 
+password = "12345678"
+
 users_list = [
   [ "Presidente", "presidente@gmail.com", 1 ],
   [ "Diretor", "diretor@gmail.com", 2 ],
@@ -29,7 +31,7 @@ boards_list = [
 ]
 
 users_list.each do | name, email, role |
-  User.create(name: name, email: email, role: role)
+  User.create(name: name, email: email, password: password, password_confirmation: password, role: role)
 end
 
 boards_list.each do | name, description |

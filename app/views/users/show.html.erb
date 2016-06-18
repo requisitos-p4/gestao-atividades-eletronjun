@@ -1,0 +1,4 @@
+<h1> <%= @user.name %> </h1>
+
+<%= link_to "Editar conta", edit_user_path %>
+<%= link_to "Excluir conta", user_path, method: :delete, data: { confirm: "Você tem certeza que deseja excluir sua conta?" } %>
