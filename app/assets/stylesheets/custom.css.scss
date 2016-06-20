@@ -98,19 +98,12 @@ footer ul li {
   margin-left: 15px;
 }
 
-/* Home */
-#home-boards {
-  display: block;
+/* header and footer */
+.footer {
+  position: absolute;
+  bottom: 0;
 }
 
-#home-boards-txt {
-  font-weight: bold;
-}
-
-#new-board-btn {
-  float: right;
-}
-
-#new-board {
-  display: block;
+.form-control.btn.btn-primary {
+  margin-top: 20px;
 }

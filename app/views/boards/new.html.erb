@@ -11,15 +11,15 @@
   <div class='new-board-info'>
     <div id='board-name-field'>
       <%= f.label :name, "Nome" %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: 'form-control' %>
     </div>
 
     <div id='board-description-field'>
       <%= f.label :description, "Descrição" %>
-      <%= f.text_area :description %>
+      <%= f.text_area :description, class: 'form-control' %>
     </div>
   </div>
 
-  <%= f.submit "Criar quadro" %>
+  <%= f.submit "Criar quadro", class: 'form-control btn btn-primary' %>
 
 <% end %>
