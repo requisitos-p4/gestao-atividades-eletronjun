@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.integer :role
-      t.belongs_to :board, index: true
 
       t.timestamps null: false
     end

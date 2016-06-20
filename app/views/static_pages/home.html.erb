@@ -1,3 +1,15 @@
-<h1> Eletronjun </h1>
+<h2>Bem vindo ao Módulo de Gestão e Acompanhamento de Atividades</h2>
 
-Módulo de Gestão e Acompanhamento de Atividades
+<div id="new-board">
+    <%= link_to "Criar novo quadro", new_board_path, class: "btn btn-success", id: "new-board-btn" %>
+</div>
+
+<div id="home-boards">
+    <h2 id="home-boards-txt">Meus quadros</h2>
+
+    <%= render :partial => "users/user_boards" %>
+
+    <h2 id="home-boards-txt">Todos os quadros</h2>
+
+    <%= render :partial => "boards/all_boards" %>
+</div>

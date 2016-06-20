@@ -1,0 +1,5 @@
+<div id="all-boards">
+    <% @boards.each do |board| %>
+        <%= link_to board.name, board_path(board), class: 'btn btn-primary', id: 'board-btn' %></li>
+    <% end %>
+</div>

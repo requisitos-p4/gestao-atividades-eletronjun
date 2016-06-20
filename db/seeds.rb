@@ -31,9 +31,10 @@ boards_list = [
 ]
 
 users_list.each do | name, email, role |
-  User.create(name: name, email: email, password: password, password_confirmation: password, role: role)
+  a = User.create(name: name, email: email, password: password, password_confirmation: password, role: role)
+  puts a.valid? 
 end
 
-boards_list.each do | name, description |
-  Board.create(name: name, description: description)
-end
+#boards_list.each do | name, description |
+#  Board.create(name: name, description: description)
+#end

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  belongs_to :board
+  has_many :admin_boards, :foreign_key => "admin_id", :class_name => "Board"
 
   before_save { self.email = email.downcase }
 

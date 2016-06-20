@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @boards = Board.all
     @user = User.find(params[:id])
   end
 

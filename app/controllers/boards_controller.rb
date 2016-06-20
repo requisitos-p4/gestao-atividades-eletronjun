@@ -1,4 +1,7 @@
 class BoardsController < ApplicationController
+
+  before_action :authenticate_user
+
   def new
     @board = Board.new
   end
@@ -6,6 +9,8 @@ class BoardsController < ApplicationController
   def create
     @board = Board.new(board_params)
    
+    current_user.admin_boards << @board
+
     if @board.save
       flash[:success] = "Quadro criado com sucesso!"
       redirect_to @board
@@ -16,7 +21,6 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-    @board.admin = current_user
   end
 
   def index
@@ -48,6 +52,6 @@ class BoardsController < ApplicationController
   private
 
     def board_params
-      params.require(:board).permit(:description, :name)
+      params.require(:board).permit(:description, :name, :admin)
     end
 end

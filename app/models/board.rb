@@ -1,7 +1,6 @@
 class Board < ActiveRecord::Base
 
-  has_one :admin, class_name: "User"
-  has_many :members, class_name: "User"
+  belongs_to :user, :foreign_key => "admin_id"
 
   validates_presence_of :description, :name
 
