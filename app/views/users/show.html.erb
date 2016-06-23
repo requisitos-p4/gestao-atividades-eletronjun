@@ -6,11 +6,6 @@
 </div>
 
 <table class='table' id="profile-table">
-  <thead>
-    <th class="align-center">Suas Respostas</th>
-    <th class="align-center">Gabarito</th>
-  </thead>
-
   <tr>
     <td class="align-center">Nome</td>
     <td class="align-center"><%= @user.name %></td>
@@ -20,13 +15,3 @@
     <td class="align-center"><%= @user.email %></td>
   </tr>
 </table>
-
-<!--
-<h2>Meus quadros</h2>
-
-<%= render :partial => "user_boards" %>
-
-<h2>Todos os quadros</h2>
-
-<%= render :partial => "boards/all_boards" %>
--->

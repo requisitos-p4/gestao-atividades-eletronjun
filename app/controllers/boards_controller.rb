@@ -4,12 +4,15 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
+    @users = User.all - [current_user]
   end
 
   def create
     @board = Board.new(board_params)
    
-    current_user.admin_boards << @board
+    members = params[:board][:members].reject{ |u| u == "0" } unless params[:board][:members].nil?
+    @board.members = members unless members.nil?
+    @board.admin.push(current_user.id)
 
     if @board.save
       flash[:success] = "Quadro criado com sucesso!"
@@ -47,6 +50,36 @@ class BoardsController < ApplicationController
     @board.destroy
     
     redirect_to boards_path          
+  end
+
+  def assign_members
+    @board = Board.find(params[:id])
+    members = @board.members
+
+    ids = []
+    User.all.each do |id|
+      ids.push(id)
+    end
+
+    @users = ids - [members] - [current_user.id]
+  end
+
+  def member_assignment
+    @board = Board.find(params[:id])
+
+    members = params[:board][:members].reject{ |u| u == "0" } unless params[:board][:members].nil?
+    @board.members =members unless members.nil?
+
+    @board.save
+
+    redirect_to @board
+  end
+
+  def unassign
+    @board = Board.find(params[:id])
+    @board.members.delete(params[:member_id])
+    @board.save
+    redirect_to @board
   end
 
   private

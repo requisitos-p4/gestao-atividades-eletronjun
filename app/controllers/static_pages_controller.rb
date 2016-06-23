@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @user = current_user
+    @admin_boards = Board.select { |b| b.admin.include?(@user.id) }
     @boards = Board.all
   end
 end

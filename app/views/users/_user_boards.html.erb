@@ -1,5 +1,6 @@
 <div id="user-boards">
-    <% @user.admin_boards.each do |board| %>
+    <% @admin_boards.each do |b| %>
+      <% board = Board.find(b) %>
       <%= link_to board.name, board_path(board), class: 'btn btn-primary', id: 'board-btn' %></li>
     <% end %>
 </div>

@@ -1,0 +1,15 @@
+<h1>Vincular membros em <%= @board.name %></h1>
+
+<%= form_for @board do |f| %>
+  <div id="member-selection">
+    <% @users.each do |user| %>
+      <div id="select-members">
+        <%= f.check_box(:members, { :multiple => true }, user.id) %>
+        <%= user.name %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= f.submit "Vincular  ", class: 'form-control btn btn-primary' %>
+
+<% end %>

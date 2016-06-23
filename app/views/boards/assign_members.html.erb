@@ -1,0 +1,17 @@
+<%= form_for @board, :url => "member_assignment" do |f| %>
+
+  <h2>Vincular membros</h2>
+
+  <div id="member-selection">
+    <% @users.each do |id| %>
+      <div id="select-members">
+        <%= f.check_box(:members, { :multiple => true }, id) %>
+        <% u = User.find(id) %>
+        <%= u.name %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= f.submit "Criar quadro", class: 'form-control btn btn-primary' %>
+
+<% end %>

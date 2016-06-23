@@ -20,6 +20,19 @@
     </div>
   </div>
 
+  <h2>Vincular membros</h2>
+
+  <div id="member-selection">
+    <% @users.each do |user| %>
+      <div id="select-members">
+        <%= f.check_box(:members, { :multiple => true }, user.id) %>
+        <%= user.name %>
+      </div>
+    <% end %>
+  </div>
+
   <%= f.submit "Criar quadro", class: 'form-control btn btn-primary' %>
 
 <% end %>
+
+

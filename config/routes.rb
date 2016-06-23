@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  get 'boards/:id/unassign/:member_id' => 'boards#unassign'
+  get 'boards/:id/assign_members' => 'boards#assign_members'
+  patch 'boards/:id/member_assignment' => 'boards#member_assignment'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
