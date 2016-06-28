@@ -1,0 +1,14 @@
+<h1> <%= @list.name %> </h1>
+
+<h2>Informações da lista</h2>
+
+<table class='table' id="board-info">
+  <tr>
+    <td class="align-center">Nome</td>
+    <td class="align-center"><%= @list.name %></td>
+  </tr>
+</table>
+
+<div class="btn-group" id="profile-conf">
+    <%= link_to "Editar lista", edit_list_path, class: "btn btn-default" %>
+</div>

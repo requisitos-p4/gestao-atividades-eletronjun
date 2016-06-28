@@ -7,6 +7,26 @@
 }
 
 #member-selection {
+  width: 45%;
+  float: left;
   height: 120px;
   overflow-y: scroll;
+}
+
+#tag-selection {
+  width: 55%;
+  padding-left: 5%;
+  height: 120px;
+  overflow-y: scroll;
+}
+
+#member-sel-title {
+    width: 40%;
+    float: left;
+}
+
+#tag-sel-title {
+    width: 45%;
+    float: right;
+    margin-right: 62px;
 }

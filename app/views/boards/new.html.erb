@@ -20,15 +20,27 @@
     </div>
   </div>
 
-  <h2>Vincular membros</h2>
+  <div id="selection">
+    <div id="member-sel-title"><h2>Vincular membros</h2></div>
+    <div id="tag-sel-title"><h2>Adicionar etiquetas ao quadro</h2></div>
 
-  <div id="member-selection">
-    <% @users.each do |user| %>
-      <div id="select-members">
-        <%= f.check_box(:members, { :multiple => true }, user.id) %>
-        <%= user.name %>
-      </div>
-    <% end %>
+    <div id="member-selection">
+      <% @users.each do |user| %>
+        <div id="select-members">
+          <%= f.check_box(:members, { :multiple => true }, user.id) %>
+          <%= user.name %>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="tag-selection">
+      <% @tags.each do |tag| %>
+        <div id="select-tags">
+          <%= f.check_box(:tags, { :multiple => true }, tag.id) %>
+          <%= tag.name %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <%= f.submit "Criar quadro", class: 'form-control btn btn-primary' %>

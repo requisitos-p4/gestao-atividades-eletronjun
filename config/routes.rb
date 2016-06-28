@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :lists
   resources :tags
   root 'static_pages#home'
 

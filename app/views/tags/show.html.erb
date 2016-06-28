@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
+<h1> <%= @tag.name %> </h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tag.name %>
-</p>
+<h2>Informações da etiqueta</h2>
 
-<p>
-  <strong>Description:</strong>
-  <%= @tag.description %>
-</p>
+<table class='table' id="board-info">
+  <tr>
+    <td class="align-center">Nome</td>
+    <td class="align-center"><%= @tag.name %></td>
+  </tr>
+  <tr>
+    <td class="align-center">Descrição</td>
+    <td class="align-center"><%= @tag.description %></td>
+  </tr>
+</table>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+<div class="btn-group" id="profile-conf">
+    <%= link_to "Editar etiqueta", edit_tag_path, class: "btn btn-default" %>
+</div>

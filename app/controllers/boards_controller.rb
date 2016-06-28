@@ -5,6 +5,7 @@ class BoardsController < ApplicationController
   def new
     @board = Board.new
     @users = User.all - [current_user]
+    @tags = Tag.all
   end
 
   def create
@@ -13,6 +14,9 @@ class BoardsController < ApplicationController
     members = params[:board][:members].reject{ |u| u == "0" } unless params[:board][:members].nil?
     @board.members = members unless members.nil?
     @board.admin.push(current_user.id)
+
+    tags = params[:board][:tags].reject{ |u| u == "0" } unless params[:board][:tags].nil?
+    @board.tags = tags unless tags.nil?
 
     if @board.save
       flash[:success] = "Quadro criado com sucesso!"
