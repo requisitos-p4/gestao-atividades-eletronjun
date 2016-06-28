@@ -5,6 +5,7 @@
 
 body {
   padding-top: 60px;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 section {
@@ -114,4 +115,33 @@ footer ul li {
 
 .nav > li > a:nth-child(1) {
   color: white;
+}
+
+.navbar {
+  background-color: #7E8286;
+  border-color: #7E8286;
+}
+
+#logo > img:nth-child(1) {
+  width: 35%;
+}
+
+.navbar {
+  height: 62px;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #7E8286; 
+}
+
+.dropdown-menu {
+  margin-top: 6px;
+}
+
+.nav {
+  margin-top: 5px;
+}
+
+.dropdown-toggle {
+  margin-bottom: 6px;
 }

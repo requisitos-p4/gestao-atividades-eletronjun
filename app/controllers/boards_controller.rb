@@ -53,7 +53,7 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
     @board.destroy
     
-    redirect_to boards_path          
+    redirect_to root_path          
   end
 
   def assign_members
